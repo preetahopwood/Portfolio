@@ -1,0 +1,256 @@
+html {
+	min-height: 600px;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(95,95,95);
+  background-image: linear-gradient(rgb(95,95,95), rgb(60,60,60));
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/*For initial home screen*/
+#backgroundImage {
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(95,95,95);
+}
+
+#homeText {
+  height: 100vh;
+
+  position: absolute;
+  right: 0;
+  padding-right: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  color: rgb(255, 251, 246);
+  text-shadow: 0px 0px 3px rgba(60,60,60,.4);
+}
+
+#homeButtons {
+  display: flex;
+  float: left;
+  color: orange;
+}
+
+#homeButtons div {
+  margin-left: -5px;
+  margin-right: 10px;
+}
+
+#homeText > h1 {
+  font-family: 'name';
+}
+
+#homeButtons > #start {
+  border: 2px solid orange;
+  border-radius: 10px;
+}
+
+#start:active {
+  color:rgb(255, 251, 246);
+  background-color: orange;
+  text-shadow: none;
+}
+
+@media screen and (min-width: 501px) {
+  #homeText {
+    width: 40vw;
+    min-width: 350px;
+  }
+
+  #homeText > h1 {
+    font-size: 70px;
+    line-height: 60px;
+    margin-bottom: 30px;
+  }
+
+  #homeText > p {
+    max-width: 450px;
+  }
+}
+
+/*persistent nav buttons to cycle through slides*/
+#navButtons {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  margin-top: 20px;
+}
+
+#navButtons > div:hover, #navButtons a:hover {
+  cursor: pointer;
+  opacity: .5;
+}
+
+.arrow {
+  border: solid orange;
+  border-width: 0 3px 3px 0;
+
+  width: 15px;
+  height: 15px;
+  transition: .2s;
+}
+
+#prev {
+  transform: rotate(135deg);
+}
+
+#next {
+  transform: rotate(-45deg);
+}
+
+#project {
+  color: orange;
+  font-family: 'bold';
+  font-size: 16px;
+}
+
+/*The second screen - about me*/
+#storedContent {
+  position: fixed;
+  visibility: hidden;
+}
+
+#newSlide {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+#newImage {
+  position: fixed;
+  z-index: -1;
+}
+
+#newText {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  position: relative;
+
+  color: rgb(255, 251, 246);
+}
+
+#newText h2 {
+  margin-bottom: 10px;
+}
+
+#newText a {
+  font-family: 'medium';
+  color: orange;
+}
+
+@media screen and (min-width: 601px) {
+  #newImage {
+    width: auto;
+    bottom: 0;
+    left: 0;
+    height: 90%;
+  }
+
+  #newSlide {
+    margin-right: 15px;
+  }
+
+  #newSlide > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+
+    width: 100%;
+    margin: auto;
+    height: 100vh;
+    max-width: 1000px;
+  }
+
+  #newText {
+    width: 40vw;
+    max-width: 350px;
+
+    position: absolute;
+    top: 25%;
+
+    align-self: flex-end;
+
+    background-image: linear-gradient(rgba(75,75,75,.8), rgba(80,80,80,.8));
+    box-shadow: 0px 0px 5px rgba(60,60,60,.5);
+    border: 2px solid rgb(255, 251, 246);
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 500px) {
+  /*For initial home screen*/
+  #homeText {
+    width: 70vw;
+  }
+
+  #homeText > h1 {
+    font-size: 50px;
+    line-height: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /*persistent nav buttons to cycle through slides*/
+  #navButtons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px 20px;
+
+    height: 7%;
+    z-index: 5;
+
+    background-color: rgb(65,65,65);
+
+    box-shadow: 0 -12px 10px rgb(65,65,65);
+  }
+
+  /*The second screen - about me*/
+  #newImage {
+    bottom: 40%;
+    left: 0;
+    max-width: 100%;
+    height: 60%;
+    width: auto;
+  }
+
+  #newText {
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+
+    overflow-y: scroll;
+
+    border-top: 2px solid rgb(255, 251, 246);
+  }
+
+  #newSlide > div {
+    position: fixed;
+    bottom: 7%;
+    height: 33%;
+    width: 100%;
+    margin: auto;
+  }
+}
