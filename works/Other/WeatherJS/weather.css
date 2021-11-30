@@ -1,0 +1,121 @@
+html, * {
+	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* testing out new layouts */
+
+body {
+	background-color: hsl(200,0%,100%);
+	transition: background-color 5s;
+  margin: 0;
+}
+
+h1, h2, h3 {
+	color:white;
+	font-family: Tahoma, sans-serif;
+	text-shadow: 1px 1px 5px rgba(0,0,0,.3);
+}
+
+h3 {
+	font-weight: normal;
+}
+
+#text {
+	position: absolute;
+	top: 30%;
+	right: 0;
+	left: 0;
+
+	text-align: center;
+}
+
+#time > h1 {
+	display: inline;
+	font-size: 72px;
+}
+
+#date > h2 {
+	display: inline;
+	margin-right: .3rem;
+}
+
+#weather {
+	margin-top: 30px;
+}
+
+#weather > div {
+	border: 2px solid white;
+	padding: 10px;
+	margin: 10px;
+	display: inline-block;
+	border-radius: 5px;
+	width: 70px;
+	text-align: center;
+
+	color: white;
+	font-family: Tahoma, sans-serif;
+
+	text-shadow: 1px 1px 5px rgba(0,0,0,.3);
+	box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+}
+
+#weather > div:hover {
+	background-color: white;
+
+	color: dimgray;
+	cursor: pointer;
+
+	text-shadow: none;
+	box-shadow: 1px 1px 7px rgba(0,0,0,.2);
+
+	transition: .1s;
+}
+
+/*Handling the background image for weather*/
+#weatherBack, #weatherFore {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	background-size: 500px 500px;
+
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+
+	transition: opacity .3s ease;
+}
+
+#weatherBack {
+	z-index: -2;
+}
+
+#weatherFore {
+	z-index: -1;
+}
+
+#skyObject {
+	background-image: url('Weather/Sun/Sun.png');
+	height: 500px;
+	width: 500px;
+	margin: 50px;
+	z-index: -3;
+
+	position:fixed;
+	top:3%;
+	left: 50%;
+	opacity: 0;
+
+	transition: opacity .3s ease;
+}
+
+
+@keyframes weatherDown {
+	0% {background-position: 0px 0px;}
+	100% {background-position: 0px 500px;}
+}
+
+@keyframes weatherAcross {
+	0% {background-position: 0px 0px;}
+	100% {background-position: 3000px 0px;}
+}
