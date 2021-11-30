@@ -1,0 +1,337 @@
+body {
+  background-color: rgb(95, 95, 95);
+  background-image: linear-gradient(rgb(95,95,95), rgb(60,60,60));
+  background-attachment: fixed;
+
+
+
+  animation: fadeIn ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+/*navigation*/
+#goback {
+  position: absolute;
+  top:20px;
+  left: 20px;
+  display: flex;
+
+  z-index: 10;
+  transition: .2s;
+}
+
+#goback h4 {
+  color: orange;
+}
+
+#backarrow {
+  border: solid orange;
+  border-width: 0 3px 3px 0;
+
+  width: 10px;
+  height: 10px;
+  margin-right: 3px;
+
+  position: relative;
+  top: 2px;
+
+  transform: rotate(135deg);
+}
+
+#goback:hover {
+  opacity: .5;
+}
+
+#title {
+  text-align: right;
+  z-index: -2;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  color: rgba(95,95,95,.2);
+  font-family: 'bold';
+}
+
+@media screen and (min-width: 501px) {
+  #title {
+    font-size: 100px;
+    line-height: 90px;
+  }
+}
+
+
+/*Body*/
+#central {
+  position: relative;
+  padding-top: 40px;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+}
+
+#carousel-wrapper {
+  width: 100%;
+  padding: 5px;
+
+  display: flex;
+  position: relative;
+  justify-content: center;
+
+  border-bottom: 2px solid rgba(60,60,60,.2);
+}
+
+#carousel {
+  width: 95%;
+  padding: 5px;
+  transition: .5s;
+  position: relative;
+  right: 4px;
+  filter:drop-shadow(0px 0px 5px rgb(60,60,60));
+}
+
+#carousel > #first {
+  opacity: 1;
+}
+
+.loneImage {
+  position: absolute;
+  opacity: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  height: 98%;
+  width: 100%;
+
+  overflow: hidden;
+  transition: opacity .5s ease-out;
+}
+
+.loneImage > img {
+  max-height: 100%;
+  max-width: 90%;
+}
+
+.imageComp {
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+
+  height: 98%;
+  width: 100%;
+
+  transition: opacity .5s ease-out;
+}
+
+.imageComp > img {
+  margin: 5px;
+  max-height: 100%;
+}
+
+@media screen and (min-width: 501px) {
+  #central {
+    margin: 0 auto;
+    min-width: 500px;
+    max-width: 1000px;
+  }
+
+  /*Images*/
+  #carousel-wrapper {
+    height: 500px;
+  }
+
+  #carousel {
+    height: 490px;
+  }
+
+  .imageComp .half {
+    height: auto;
+    max-width: 45%;
+  }
+
+  .imageComp .third {
+    height: auto;
+    max-width: 30%;
+  }
+}
+
+
+/*Carousel Buttons*/
+.arrow {
+  border: solid orange;
+  border-width: 0 6px 6px 0;
+
+  width: 30px;
+  height: 30px;
+  transition: .2s;
+}
+
+.arrow:hover {
+  opacity: .5;
+}
+
+#prev, #next {
+  position: absolute;
+  top:48%;
+  margin: 0 20px;
+  z-index: 2;
+}
+
+#prev {
+  left: 0;
+  transform: rotate(135deg);
+}
+
+#next {
+  right: 0;
+  transform: rotate(-45deg);
+}
+
+/*Text*/
+#summary {
+  margin: auto;
+  width: 100%;
+  padding: 20px;
+}
+
+#text {
+  font-family: 'regular';
+  color: rgb(255, 251, 246);
+}
+
+.bodyText {
+  margin-bottom: 15px;
+}
+
+.bodyText p {
+  margin-top: 10px;
+  opacity: .9;
+}
+
+.bodyText h3 {
+  opacity: 1;
+}
+
+.sumText p{
+  font-family: 'medium';
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+
+.orange {
+  color:orange;
+  font-size: 16px;
+}
+
+#links {
+  color: orange;
+  text-align: center;
+  transition: .3s;
+
+  filter: drop-shadow(2px 2px 5px rgba(60,60,60, .8));
+}
+
+#links img {
+  width: 100%;
+  max-width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+#links a:hover h4, #links a:hover img {
+  opacity: .5;
+}
+
+#links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+#links h4 {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 501px) {
+  #summary {
+    margin-top: 25px;
+    max-width: 850px;
+    display: flex;
+  }
+
+  #text {
+    display: flex;
+    margin-bottom: 100px;
+  }
+
+  #text > div {
+    width: 50%;
+    padding: 0 10px;
+  }
+
+  #links {
+    width: 15%;
+    margin-left: 40px;
+  }
+}
+
+/*Mobile Version*/
+@media screen and (max-width: 501px) {
+  #title {
+    font-size: 48px;
+    line-height: 42px;
+  }
+
+  /*Images*/
+  #carousel-wrapper {
+    height: 250px;
+  }
+
+  #carousel {
+    height: 240px;
+  }
+
+  .imageComp .third {
+    max-width: 28%;
+  }
+
+  .imageComp .half {
+    max-width: 40%;
+  }
+
+  /*Text*/
+  #text {
+    margin-bottom: 20px;
+  }
+
+  #links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #links a {
+    margin: 0 15px;
+  }
+
+  #links h4 {
+    max-width: 60px;
+  }
+}
